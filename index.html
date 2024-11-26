@@ -18,14 +18,41 @@
         SiteAlias: "d86e27e6",
         SiteType: atob("RFVEQU9ORQ=="),
         PublicationDate: "Sat Sep 28 12:35:43 UTC 2024",
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang="en"
+  class="pointer skrollr skrollr-desktop"
+>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style id="customRules"></style>
+    <script type="text/javascript">
+      window._currentDevice = "desktop";
+      window.Parameters = window.Parameters || {
+        HomeUrl: "https://fc.churchwebcanada.ca/",
+        AccountUUID: "4803835321d64fd7bc0dc98d58284e75",
+        SystemID: "US_DIRECT_PRODUCTION",
+        SiteAlias: "d86e27e6",
+        SiteType: atob("RFVEQU9ORQ=="),
+        PublicationDate: "Sat Sep 28 12:35:43 UTC 2024",
         ExternalUid: null,
         IsSiteMultilingual: false,
+        InitialPostAlias: "",
+        InitialDynamicItem: "",
         InitialPostAlias: "",
         InitialDynamicItem: "",
         DynamicPageInfo: {
           isDynamicPage: false,
           base64JsonRowData: "null",
+          isDynamicPage: false,
+          base64JsonRowData: "null",
         },
+        InitialPageAlias: "st-pauls-burlington",
+        InitialPageUuid: "e593d04b5f1e46ce88569209a422ac93",
+        InitialPageId: "1160277991",
+        InitialEncodedPageAlias: "c3QtcGF1bHMtYnVybGluZ3Rvbg==",
+        CurrentPageUrl: "",
         InitialPageAlias: "st-pauls-burlington",
         InitialPageUuid: "e593d04b5f1e46ce88569209a422ac93",
         InitialPageId: "1160277991",
@@ -35,7 +62,11 @@
         AllowAjax: false,
         AfterAjaxCommand: null,
         HomeLinkText: "Back To Home",
+        HomeLinkText: "Back To Home",
         UseGalleryModule: false,
+        CurrentThemeName: "Layout Theme",
+        ThemeVersion: "47880",
+        DefaultPageAlias: "",
         CurrentThemeName: "Layout Theme",
         ThemeVersion: "47880",
         DefaultPageAlias: "",
@@ -49,15 +80,24 @@
         IsNewStore: "false",
         StorePath: "",
         StoreId: "null",
+        StorePageAlias: "null",
+        StorePagesUrls: "e30=",
+        IsNewStore: "false",
+        StorePath: "",
+        StoreId: "null",
         StoreVersion: 0,
+        StoreBaseUrl: "",
         StoreBaseUrl: "",
         StoreCleanUrl: true,
         StoreDisableScrolling: true,
         IsStoreSuspended: false,
         NotificationSubDomain: "fc-churchwebcanada",
+        NotificationSubDomain: "fc-churchwebcanada",
         HasCustomDomain: true,
         SimpleSite: false,
         showCookieNotification: false,
+        cookiesNotificationMarkup: "null",
+        translatedPageUrl: "",
         cookiesNotificationMarkup: "null",
         translatedPageUrl: "",
         isFastMigrationSite: false,
@@ -65,7 +105,15 @@
         currentLanguage: "en",
         currentLocale: "en",
         NavItems: "{}",
+        sidebarPosition: "NA",
+        currentLanguage: "en",
+        currentLocale: "en",
+        NavItems: "{}",
         errors: {
+          general:
+            "There was an error connecting to the page.<br/> Make sure you are not offline.",
+          password: "Incorrect name/password combination",
+          tryAgain: "Try again",
           general:
             "There was an error connecting to the page.<br/> Make sure you are not offline.",
           password: "Incorrect name/password combination",
@@ -78,16 +126,29 @@
           BlockContainerSelector: ".dmBody",
           NavbarSelector: "#dmNav:has(a)",
           SubNavbarSelector: "#subnav_main",
+          ShowBackToHomeOnInnerPages: true,
+          NavbarSize: 4,
+          NavbarLiveHomePage: "https://fc.churchwebcanada.ca/",
+          BlockContainerSelector: ".dmBody",
+          NavbarSelector: "#dmNav:has(a)",
+          SubNavbarSelector: "#subnav_main",
         },
         hasCustomCode: false,
         planID: "7",
         customTemplateId: "null",
         siteTemplateId: "null",
         productId: "DM_DIRECT",
+        planID: "7",
+        customTemplateId: "null",
+        siteTemplateId: "null",
+        productId: "DM_DIRECT",
         disableTracking: true,
+        pageType: "FROM_SCRATCH",
         pageType: "FROM_SCRATCH",
         isRuntimeServer: true,
         isInEditor: false,
+        hasNativeStore: false,
+      };
         hasNativeStore: false,
       };
 
@@ -96,13 +157,31 @@
       window.Parameters.LayoutVariationID = {};
       window.Parameters.LayoutVariationID[window._currentDevice] = 5;
     </script>
+      window.Parameters.LayoutID = {};
+      window.Parameters.LayoutID[window._currentDevice] = 9;
+      window.Parameters.LayoutVariationID = {};
+      window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+    </script>
 
+    <!-- Injecting site-wide to the head -->
     <!-- Injecting site-wide to the head -->
 
     <!-- End Injecting site-wide to the head -->
+    <!-- End Injecting site-wide to the head -->
 
     <!-- Inject secured cdn script -->
+    <!-- Inject secured cdn script -->
 
+    <!-- ========= Meta Tags ========= -->
+    <script>
+      try {
+        if (
+          navigator.serviceWorker &&
+          navigator.serviceWorker.getRegistrations &&
+          location.protocol === "https:"
+        ) {
+          // remove all service workers
+          navigator.serviceWorker
     <!-- ========= Meta Tags ========= -->
     <script>
       try {
@@ -121,10 +200,26 @@
                   registration.unregister();
                 });
               }
+              if (registrations && registrations.length) {
+                console.log("unregistering service workers");
+                registrations.forEach(function (registration) {
+                  registration.unregister();
+                });
+              }
             });
           // clear caches
           if (caches) {
+          // clear caches
+          if (caches) {
             caches.keys().then(function (keyList) {
+              if (keyList && keyList.length) {
+                console.log("deleting caches");
+                keyList.forEach(function (key) {
+                  if (key && key.indexOf("druntime") === 0) {
+                    caches.delete(key);
+                  }
+                });
+              }
               if (keyList && keyList.length) {
                 console.log("deleting caches");
                 keyList.forEach(function (key) {
@@ -140,7 +235,17 @@
         // not a secured location
       }
     </script>
+          }
+        }
+      } catch (err) {
+        // not a secured location
+      }
+    </script>
 
+    <link
+      rel="canonical"
+      href="https://fc.churchwebcanada.ca/st-pauls-burlington"
+    />
     <link
       rel="canonical"
       href="https://fc.churchwebcanada.ca/st-pauls-burlington"
@@ -152,9 +257,21 @@
       content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover"
     />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      id="view"
+      name="viewport"
+      content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <!--Add favorites icons-->
+    <!--Add favorites icons-->
 
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.cdn-website.com/runtime/favicon_d1_res.ico"
+    />
     <link
       rel="icon"
       type="image/x-icon"
@@ -163,29 +280,66 @@
 
     <!-- End favorite icons -->
     <link rel="preconnect" href="https://lirp.cdn-website.com/" />
+    <!-- End favorite icons -->
+    <link rel="preconnect" href="https://lirp.cdn-website.com/" />
 
     <!-- render the required CSS and JS in the head section -->
     <script>
       window.SystemID = "US_DIRECT_PRODUCTION";
+    <!-- render the required CSS and JS in the head section -->
+    <script>
+      window.SystemID = "US_DIRECT_PRODUCTION";
 
+      if (!window.dmAPI) {
       if (!window.dmAPI) {
         window.dmAPI = {
           registerExternalRuntimeComponent: function () {},
           getCurrentDeviceType: function () {
             return window._currentDevice;
           },
+          registerExternalRuntimeComponent: function () {},
+          getCurrentDeviceType: function () {
+            return window._currentDevice;
+          },
         };
       }
+      }
 
+      if (!window.requestIdleCallback) {
       if (!window.requestIdleCallback) {
         window.requestIdleCallback = function (fn) {
           setTimeout(fn, 0);
         };
       }
     </script>
+          setTimeout(fn, 0);
+        };
+      }
+    </script>
 
     <!-- loadCSS function header.jsp-->
+    <!-- loadCSS function header.jsp-->
 
+    <script id="d-js-load-css">
+      /**
+       * There are a few <link> tags with CSS resource in them that are preloaded in the page
+       * in each of those there is a "onload" handler which invokes the loadCSS callback
+       * defined here.
+       * We are monitoring 3 main CSS files - the runtime, the global and the page.
+       * When each load we check to see if we can append them all in a batch. If threre
+       * is no page css (which may happen on inner pages) then we do not wait for it
+       */
+      (function () {
+        let cssLinks = {};
+        function loadCssLink(link) {
+          link.onload = null;
+          link.rel = "stylesheet";
+          link.type = "text/css";
+        }
+
+        function checkCss() {
+          const pageCssLink = document.querySelector("[id*='CssLink']");
+          const widgetCssLink = document.querySelector("[id*='widgetCSS']");
     <script id="d-js-load-css">
       /**
        * There are a few <link> tags with CSS resource in them that are preloaded in the page
@@ -214,6 +368,13 @@
             (!pageCssLink || cssLinks.page) &&
             (!widgetCssLink || cssLinks.widget)
           ) {
+          if (
+            cssLinks &&
+            cssLinks.runtime &&
+            cssLinks.global &&
+            (!pageCssLink || cssLinks.page) &&
+            (!widgetCssLink || cssLinks.widget)
+          ) {
             const storedRuntimeCssLink = cssLinks.runtime;
             const storedPageCssLink = cssLinks.page;
             const storedGlobalCssLink = cssLinks.global;
@@ -225,8 +386,13 @@
             if (storedPageCssLink) {
               storedPageCssLink.disabled = true;
               loadCssLink(storedPageCssLink);
+              storedPageCssLink.disabled = true;
+              loadCssLink(storedPageCssLink);
             }
 
+            if (storedWidgetCssLink) {
+              storedWidgetCssLink.disabled = true;
+              loadCssLink(storedWidgetCssLink);
             if (storedWidgetCssLink) {
               storedWidgetCssLink.disabled = true;
               loadCssLink(storedWidgetCssLink);
@@ -252,7 +418,25 @@
                   cssLinks = null;
                 }
               }, 0);
+              setTimeout(() => {
+                storedRuntimeCssLink.disabled = false;
+                storedGlobalCssLink.disabled = false;
+                if (storedPageCssLink) {
+                  storedPageCssLink.disabled = false;
+                }
+                if (storedWidgetCssLink) {
+                  storedWidgetCssLink.disabled = false;
+                }
+                // (SUP-4179) Clear the accumulated cssLinks only when we're
+                // sure that the document has finished loading and the document
+                // has been parsed.
+                if (document.readyState === "interactive") {
+                  cssLinks = null;
+                }
+              }, 0);
             });
+          }
+        }
           }
         }
 
@@ -261,7 +445,41 @@
             var urlParams = new URLSearchParams(window.location.search);
             var noCSS = !!urlParams.get("nocss");
             var cssTimeout = urlParams.get("cssTimeout") || 0;
+        function loadCSS(link) {
+          try {
+            var urlParams = new URLSearchParams(window.location.search);
+            var noCSS = !!urlParams.get("nocss");
+            var cssTimeout = urlParams.get("cssTimeout") || 0;
 
+            if (noCSS) {
+              return;
+            }
+            if (link.href && link.href.includes("d-css-runtime")) {
+              cssLinks.runtime = link;
+              checkCss();
+            } else if (link.id === "siteGlobalCss") {
+              cssLinks.global = link;
+              checkCss();
+            } else if (link.id && link.id.includes("CssLink")) {
+              cssLinks.page = link;
+              checkCss();
+            } else if (link.id && link.id.includes("widgetCSS")) {
+              cssLinks.widget = link;
+              checkCss();
+            } else {
+              requestIdleCallback(function () {
+                window.setTimeout(function () {
+                  loadCssLink(link);
+                }, parseInt(cssTimeout, 10));
+              });
+            }
+          } catch (e) {
+            throw e;
+          }
+        }
+        window.loadCSS = window.loadCSS || loadCSS;
+      })();
+    </script>
             if (noCSS) {
               return;
             }
@@ -301,7 +519,21 @@
           }.bind(this)
         );
       }
+    <script data-role="deferred-init" type="text/javascript">
+      /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+      function Def() {
+        this.promise = new Promise(
+          function (a, b) {
+            (this.resolve = a), (this.reject = b);
+          }.bind(this)
+        );
+      }
 
+      const defs = {};
+      window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def()), defs[a];
+      };
+      window.waitForDeferred = function (b, a, c) {
       const defs = {};
       window.getDeferred = function (a) {
         return null == defs[a] && (defs[a] = new Def()), defs[a];
@@ -309,6 +541,16 @@
       window.waitForDeferred = function (b, a, c) {
         let d = window?.getDeferred?.(b);
         d
+          ? d.promise.then(a)
+          : c && ["complete", "interactive"].includes(document.readyState)
+          ? setTimeout(a, 1)
+          : c
+          ? document.addEventListener("DOMContentLoaded", a)
+          : console.error(`Deferred  does not exist`);
+      };
+    </script>
+    <style id="forceCssIncludes">
+      /* This file is auto-generated from a `scss` file with the same name */
           ? d.promise.then(a)
           : c && ["complete", "interactive"].includes(document.readyState)
           ? setTimeout(a, 1)
@@ -374,11 +616,72 @@
         --color_1: rgba(33, 86, 135, 1);
       }
     </style>
+      .videobgwrapper {
+        overflow: hidden;
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        border-radius: inherit;
+      }
+      .videobgframe {
+        position: absolute;
+        width: 101%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        object-fit: fill;
+      }
+      #dm video.videobgframe {
+        margin: 0;
+      }
+      @media (max-width: 767px) {
+        .dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done) {
+          min-height: 80vh;
+        }
+      }
+      @media (min-width: 1025px) {
+        .dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done) {
+          min-height: 45vh;
+        }
+      }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .responsiveTablet
+          .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done) {
+          min-height: 45vh;
+        }
+      }
+      #dm [data-show-on-page-only] {
+        display: none !important;
+      }
+      #dmRoot div.stickyHeaderFix div.site_content {
+        margin-top: 0 !important;
+      }
+      #dmRoot div.stickyHeaderFix div.hamburger-header-container {
+        position: relative;
+      }
+    </style>
+    <style id="cssVariables" type="text/css">
+      :root {
+        --color_1: rgba(33, 86, 135, 1);
+      }
+    </style>
 
+    <!-- Google Fonts Include -->
     <!-- Google Fonts Include -->
 
     <!-- loadCSS function fonts.jsp-->
+    <!-- loadCSS function fonts.jsp-->
 
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./St. Paul’s Presbyterian Church, Burlington_files/css2"
+    />
     <link
       type="text/css"
       rel="stylesheet"
@@ -391,9 +694,22 @@
       type="text/css"
       href="./St. Paul’s Presbyterian Church, Burlington_files/d-css-runtime-desktop-one-package-structured-global.min.css"
     />
+    <!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./St. Paul’s Presbyterian Church, Burlington_files/d-css-runtime-desktop-one-package-structured-global.min.css"
+    />
 
     <!-- End of RT CSS Include -->
+    <!-- End of RT CSS Include -->
 
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./St. Paul’s Presbyterian Church, Burlington_files/60263cb1975c3574521d9f222a9ccd7b.css"
+      id="widgetCSS"
+    />
     <link
       type="text/css"
       rel="stylesheet"
@@ -407,7 +723,18 @@
         height: auto;
       }
     </style>
+    <!-- Support `img` size attributes -->
+    <style>
+      img[width][height] {
+        height: auto;
+      }
+    </style>
 
+    <!-- Support showing sticky element on page only -->
+    <style>
+      body[data-page-alias="st-pauls-burlington"]
+        #dm
+        [data-show-on-page-only="st-pauls-burlington"] {
     <!-- Support showing sticky element on page only -->
     <style>
       body[data-page-alias="st-pauls-burlington"]
@@ -416,7 +743,11 @@
         display: block !important;
       }
     </style>
+      }
+    </style>
 
+    <!-- This is populated in Ajax navigation -->
+    <style id="pageAdditionalWidgetsCss" type="text/css"></style>
     <!-- This is populated in Ajax navigation -->
     <style id="pageAdditionalWidgetsCss" type="text/css"></style>
 
@@ -427,12 +758,298 @@
       href="./St. Paul’s Presbyterian Church, Burlington_files/d86e27e6_1.min.css"
       id="siteGlobalCss"
     />
+    <!-- Site CSS -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./St. Paul’s Presbyterian Church, Burlington_files/d86e27e6_1.min.css"
+      id="siteGlobalCss"
+    />
 
+    <style id="customWidgetStyle" type="text/css"></style>
+    <style id="innerPagesStyle" type="text/css"></style>
     <style id="customWidgetStyle" type="text/css"></style>
     <style id="innerPagesStyle" type="text/css"></style>
 
     <style id="additionalGlobalCss" type="text/css"></style>
+    <style id="additionalGlobalCss" type="text/css"></style>
 
+    <style id="pagestyle" type="text/css">
+      *#dm *.dmBody div.u_1689320350 {
+        background-color: rgba(0, 0, 0, 0) !important;
+      }
+      *.u_1689320350 {
+        background-image: none !important;
+        background-color: rgba(0, 0, 0, 0) !important;
+        background-position: 0 0 !important;
+        background-size: auto !important;
+        background-repeat: repeat !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
+      *#dm *.dmBody div.u_1422938344 {
+        background-color: rgba(0, 0, 0, 0) !important;
+      }
+      *.u_1422938344 {
+        background-image: none !important;
+        background-color: rgba(0, 0, 0, 0) !important;
+        background-position: 0 0 !important;
+        background-size: auto !important;
+        background-repeat: repeat !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
+      *#dm *.dmBody div.u_Huttonville_Bulletins {
+        background-color: rgba(0, 0, 0, 0) !important;
+      }
+      *.u_Huttonville_Bulletins {
+        background-image: none !important;
+        background-color: rgba(0, 0, 0, 0) !important;
+        background-position: 0 0 !important;
+        background-size: auto !important;
+        background-repeat: repeat !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
+      *#dm *.dmBody div.u_Huttonville_Photos {
+        background-color: rgba(0, 0, 0, 0) !important;
+      }
+      *.u_Huttonville_Photos {
+        background-image: none !important;
+        background-color: rgba(0, 0, 0, 0) !important;
+        background-position: 0 0 !important;
+        background-size: auto !important;
+        background-repeat: repeat !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
+      *#dm *.dmBody div.u_1636320751 {
+        background-color: rgba(21, 90, 155, 1) !important;
+      }
+      *#dm *.dmBody div.u_1800048215 *.copyright {
+        color: rgba(255, 255, 255, 1) !important;
+      }
+      *#dm *.dmBody *.u_1987286848:before {
+        opacity: 0.5 !important;
+        background-color: rgb(255, 255, 255) !important;
+      }
+      *#dm *.dmBody *.u_1987286848.before {
+        opacity: 0.5 !important;
+        background-color: rgb(255, 255, 255) !important;
+      }
+      *#dm *.dmBody div.u_1987286848:before {
+        background-color: rgba(255, 255, 255, 1) !important;
+        opacity: 0.78 !important;
+      }
+      *#dm *.dmBody div.u_1987286848.before {
+        background-color: rgba(255, 255, 255, 1) !important;
+        opacity: 0.78 !important;
+      }
+      *#dm *.dmBody div.u_1477799428 {
+        background-repeat: no-repeat !important;
+        background-image: none !important;
+        background-size: cover !important;
+      }
+      *#dm *.dmBody div.u_1398099078 *.svg {
+        color: rgba(255, 102, 0, 1) !important;
+        fill: rgba(255, 102, 0, 1) !important;
+        width: 50% !important;
+      }
+      *#dm *.dmBody div.u_1264751532 {
+        background-color: rgb(255, 255, 255) !important;
+        background-image: none !important;
+      }
+      *#dm *.dmBody div.u_1398099078 {
+        border-radius: 50% !important;
+        -moz-border-radius: 50% !important;
+        border-color: rgba(255, 102, 0, 1) !important;
+        border-width: 0 !important;
+        -webkit-border-radius: 50% !important;
+        border-style: solid !important;
+        background-color: rgba(239, 239, 239, 1) !important;
+      }
+      *#dm *.dmBody div.u_1182546844 *.svg {
+        color: rgba(255, 102, 0, 1) !important;
+        fill: rgba(255, 102, 0, 1) !important;
+        width: 50% !important;
+      }
+      *#dm *.dmBody div.u_1182546844 {
+        border-radius: 50% !important;
+        -moz-border-radius: 50% !important;
+        border-color: rgba(255, 102, 0, 1) !important;
+        border-width: 0 !important;
+        -webkit-border-radius: 50% !important;
+        border-style: solid !important;
+        background-color: rgba(239, 239, 239, 1) !important;
+      }
+      *#dm *.dmBody div.u_1974617554 {
+        background-color: rgba(13, 84, 148, 1) !important;
+      }
+      *#dm *.dmBody div.u_1109885163 img[dm_changed] {
+        border-color: rgba(255, 255, 255, 1) !important;
+        border-width: 3px !important;
+        border-style: solid !important;
+      }
+      *#dm *.dmBody div.u_1109885163 img {
+        border-color: rgba(255, 255, 255, 1) !important;
+        border-width: 3px !important;
+        border-style: solid !important;
+      }
+      *#dm *.dmBody a.u_1039362391 {
+        color: rgba(0, 0, 0, 0) !important;
+      }
+      *#dm *.dmBody a.u_1039362391:hover {
+        color: rgb(255, 255, 255) !important;
+      }
+      *#dm *.dmBody a.u_1039362391.hover {
+        color: rgb(255, 255, 255) !important;
+      }
+      *#dm *.dmBody a.u_1039362391 span.text {
+        font-family: Alike !important;
+      }
+      *#dm *.dmBody div.u_1311801473 {
+        background-color: rgba(0, 0, 0, 0) !important;
+      }
+      *#dm *.dmBody div.u_1983591342 {
+        box-shadow: rgba(0, 0, 0, 0.25) 0 3px 11px 0 !important;
+        -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 3px 11px 0 !important;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 3px 11px 0 !important;
+      }
+      *#dm *.dmBody div.u_1227164009 {
+        box-shadow: rgba(0, 0, 0, 0.25) 0 3px 11px 0 !important;
+        -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 3px 11px 0 !important;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 3px 11px 0 !important;
+      }
+      *#dm *.dmBody div.u_1929584857 {
+        box-shadow: rgba(0, 0, 0, 0.25) 0 3px 11px 0 !important;
+        -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 3px 11px 0 !important;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 3px 11px 0 !important;
+      }
+      *#dm *.dmBody div.u_1313080061 {
+        background-color: rgba(248, 248, 248, 1) !important;
+      }
+      *#dm *.dmBody hr.u_1534145554 {
+        background-color: rgb(82, 193, 243) !important;
+      }
+      *#dm *.dmBody div.u_1033513921 hr {
+        color: rgba(255, 102, 0, 1) !important;
+        background-color: rgba(255, 102, 0, 1) !important;
+      }
+      *#dm *.dmBody a.u_1353684566 span.text {
+        color: rgb(50, 79, 146) !important;
+      }
+      *#dm *.dmBody a.u_1353684566 {
+        background-color: rgba(0, 0, 0, 0) !important;
+        border-style: solid !important;
+        border-width: 1px !important;
+        border-color: rgb(50, 79, 146) !important;
+      }
+      *#dm *.dmBody div.u_1409078484 {
+        background-color: rgba(0, 0, 0, 0) !important;
+      }
+      *#dm *.dmBody hr.u_1873676660 {
+        background-color: rgb(82, 193, 243) !important;
+      }
+      *#dm *.dmBody div.u_1499747411 hr {
+        color: rgba(255, 102, 0, 1) !important;
+        background-color: rgba(255, 102, 0, 1) !important;
+      }
+      *#dm *.dmBody div.u_1796197152 {
+        background-color: rgba(248, 248, 248, 1) !important;
+      }
+      *#dm *.dmBody hr.u_1441907354 {
+        background-color: rgb(82, 193, 243) !important;
+      }
+      *#dm *.dmBody div.u_1003207172 hr {
+        color: rgba(255, 102, 0, 1) !important;
+        background-color: rgba(255, 102, 0, 1) !important;
+      }
+      *#dm *.dmBody div.u_1391483155 *.svg {
+        color: rgba(255, 102, 0, 1) !important;
+        fill: rgba(255, 102, 0, 1) !important;
+        width: 50% !important;
+      }
+      *#dm *.dmBody div.u_1391483155 {
+        border-radius: 50% !important;
+        -moz-border-radius: 50% !important;
+        border-color: rgba(255, 102, 0, 1) !important;
+        border-width: 0 !important;
+        -webkit-border-radius: 50% !important;
+        border-style: solid !important;
+        background-color: rgba(239, 239, 239, 1) !important;
+      }
+      *#dm *.dmBody div.u_1984092704 {
+        background-color: rgba(241, 241, 241, 1) !important;
+      }
+      *#dm *.dmBody div.u_1799339833 {
+        border-color: rgba(0, 0, 0, 1) !important;
+        border-width: 1px !important;
+        border-style: solid !important;
+      }
+      *#dm *.dmBody div.u_1645571357 .svg {
+        color: rgba(233, 37, 6, 1) !important;
+        fill: rgba(233, 37, 6, 1) !important;
+      }
+      *#dm *.dmBody div.u_1084853123 {
+        border-color: rgba(21, 90, 155, 1) !important;
+        border-width: 3px !important;
+        border-style: solid !important;
+        background-color: rgba(255, 255, 255, 1) !important;
+      }
+      *#dm *.dmBody div.u_1687632938 {
+        border-color: rgba(13, 84, 148, 1) !important;
+        border-width: 3px !important;
+        border-style: solid !important;
+        background-color: rgba(255, 255, 255, 1) !important;
+      }
+      *#dm *.dmBody div.u_1987286848 {
+        background-image: none !important;
+        background-color: rgba(255, 255, 255, 1) !important;
+      }
+      *#dm *.dmBody div.u_1138271394 .svg {
+        color: rgba(13, 84, 148, 1) !important;
+        fill: rgba(13, 84, 148, 1) !important;
+      }
+      *#dm *.dmBody div.u_1418501874 {
+        border-radius: 0 !important;
+      }
+      *#dm *.dmBody div.u_1418501874 .svg {
+        color: rgba(13, 84, 148, 1) !important;
+        fill: rgba(13, 84, 148, 1) !important;
+      }
+      *#dm *.dmBody div.u_1005930102 {
+        border-radius: 0 !important;
+      }
+      *#dm *.dmBody div.u_1005930102 .svg {
+        color: rgba(13, 84, 148, 1) !important;
+        fill: rgba(13, 84, 148, 1) !important;
+      }
+      *#dm *.dmBody div.u_1469103143 .svg {
+        color: rgba(13, 84, 148, 1) !important;
+        fill: rgba(13, 84, 148, 1) !important;
+      }
+      *#dm *.dmBody hr.u_1893425680 {
+        background-color: rgb(82, 193, 243) !important;
+      }
+      *#dm *.dmBody div.u_1376858904 hr {
+        color: rgba(255, 102, 0, 1) !important;
+        background-color: rgba(255, 102, 0, 1) !important;
+      }
+      *#dm *.dmBody div.u_1031115837 {
+        border-color: rgba(21, 90, 155, 1) !important;
+        border-width: 3px !important;
+        border-style: solid !important;
+        background-color: rgba(255, 255, 255, 1) !important;
+      }
+    </style>
     <style id="pagestyle" type="text/css">
       *#dm *.dmBody div.u_1689320350 {
         background-color: rgba(0, 0, 0, 0) !important;
@@ -2082,9 +2699,1420 @@
         min-width: 25px !important;
       }
     </style>
+    <style id="pagestyleDevice" type="text/css">
+      *#dm *.dmBody div.u_1689320350 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: none !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        min-width: 0 !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody div.u_1422938344 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody div.u_Huttonville_Bulletins {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: none !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        min-width: 0 !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody div.u_Huttonville_Photos {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody div.u_1177454213 {
+        display: block !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 426.8px !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: 100% !important;
+        margin-top: 8px !important;
+        margin-bottom: 8px !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+      }
+      *#dm *.dmBody div.u_1648703558 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 40px !important;
+        padding-bottom: 0 !important;
+        max-width: 100% !important;
+        padding-right: 40px !important;
+        min-width: 0 !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody div.u_1389029098 {
+        width: calc(100% - 425px) !important;
+        height: 30px !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        position: relative !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: 30px !important;
+        margin-top: 16px !important;
+        margin-bottom: 10px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody h2.u_1228917718 {
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        float: none !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        top: 0 !important;
+        max-width: calc(100% - 0px) !important;
+        left: 0 !important;
+        width: 100% !important;
+        margin-top: 19px !important;
+        position: relative !important;
+        margin-bottom: 8px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: left !important;
+        height: auto !important;
+      }
+      *#dm *.dmBody h2.u_1105570308 {
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        float: none !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        top: 0 !important;
+        max-width: calc(100% - 0px) !important;
+        left: 0 !important;
+        width: 100% !important;
+        margin-top: 19px !important;
+        position: relative !important;
+        margin-bottom: 8px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: left !important;
+        height: auto !important;
+      }
+      *#dm *.dmBody h2.u_1516546433 {
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        float: none !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        top: 0 !important;
+        max-width: calc(100% - 0px) !important;
+        left: 0 !important;
+        width: 100% !important;
+        margin-top: 19px !important;
+        position: relative !important;
+        margin-bottom: 8px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: left !important;
+        height: auto !important;
+      }
+      *#dm *.dmBody h3.u_1228917718 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        max-width: calc(100% - 0px) !important;
+        margin-top: 8px !important;
+        margin-bottom: 8px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: left !important;
+      }
+      *#dm *.dmBody div.u_1264751532 {
+        padding-top: 12.5px !important;
+        padding-bottom: 12.5px !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: top left !important;
+        height: auto !important;
+        background-attachment: fixed !important;
+        position: relative !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        max-width: none !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody a.u_1039362391 span.text {
+        font-size: 14px !important;
+      }
+      *#dm *.dmBody a.u_1039362391 {
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+        height: 54px !important;
+        display: block !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+      }
+      *#dm *.dmBody div.u_1983591342 {
+        padding-top: 0 !important;
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+        padding-right: 0 !important;
+      }
+      *#dm *.dmBody div.u_1227164009 {
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+      }
+      *#dm *.dmBody div.u_1929584857 {
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+      }
+      *#dm *.dmBody div.u_1182546844 {
+        width: calc(100% - 95px) !important;
+        height: 119px !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        position: relative !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        max-width: 119px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        display: block !important;
+      }
+      *#dm *.dmBody div.u_1398099078 {
+        width: calc(100% - 95px) !important;
+        height: 119px !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        position: relative !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        max-width: 119px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        display: block !important;
+      }
+      *#dm *.dmBody h3.u_1105570308 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: 100% !important;
+        margin-top: 10px !important;
+        margin-bottom: 8px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: left !important;
+      }
+      *#dm *.dmBody div.u_1313080061 {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+      }
+      *#dm *.dmBody h3.u_1700971391 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+        text-align: left !important;
+      }
+      *#dm *.dmBody div.u_1970136733 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        max-width: calc(100% - 0px) !important;
+        margin-top: 13px !important;
+        margin-bottom: 0 !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        display: block !important;
+      }
+      *#dm *.dmBody div.u_1261065497 {
+        padding-left: 0 !important;
+        margin-left: 10px !important;
+      }
+      *#dm *.dmBody div.u_1033513921 {
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: calc(100% - 0px) !important;
+        left: 0 !important;
+        width: 55px !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+        height: auto !important;
+        display: block !important;
+      }
+      *#dm *.dmBody div.u_1001828327 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 40px !important;
+        padding-bottom: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-right: 40px !important;
+        min-width: 0 !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody h1.u_1337409100 {
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        width: 410px !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+        text-align: left !important;
+        height: auto !important;
+      }
+      *#dm *.dmBody h3.u_1337409100 {
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        width: 871.5px !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+        text-align: center !important;
+        height: auto !important;
+        display: block !important;
+      }
+      *#dm *.dmBody h1.u_1061694670 {
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        width: 410px !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+        text-align: left !important;
+        height: auto !important;
+      }
+      *#dm *.dmBody h3.u_1061694670 {
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        width: 871.5px !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+        text-align: center !important;
+        height: auto !important;
+        display: block !important;
+      }
+      *#dm *.dmBody h1.u_1712597127 {
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        width: 410px !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+        text-align: left !important;
+        height: auto !important;
+      }
+      *#dm *.dmBody h3.u_1712597127 {
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        width: 871.5px !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+        text-align: center !important;
+        height: auto !important;
+        display: block !important;
+      }
+      *#dm *.dmBody div.u_1155303968 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: none !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        min-width: 0 !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody div.u_1499747411 {
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: calc(100% - 0px) !important;
+        left: 0 !important;
+        width: 55px !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+        height: auto !important;
+        display: block !important;
+      }
+      *#dm *.dmBody div.u_1353684566 {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+        margin-left: auto !important;
+        max-height: 1000px !important;
+        height: 467px !important;
+        margin-right: auto !important;
+        display: block !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        max-width: calc(100% - 0px) !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody div.u_1419928226 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 40px !important;
+        padding-bottom: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-right: 40px !important;
+        min-width: 0 !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody div.u_1409078484 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-left: 40px !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-right: 40px !important;
+        min-width: 0 !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody div.u_1907322958 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 40px !important;
+        padding-bottom: 0 !important;
+        max-width: 100% !important;
+        padding-right: 40px !important;
+        min-width: 0 !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody div.u_1563596408 {
+        width: calc(100% - 425px) !important;
+        height: 30px !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        position: relative !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: 30px !important;
+        margin-top: 16px !important;
+        margin-bottom: 10px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody div.u_contact {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 40px !important;
+        padding-bottom: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-right: 40px !important;
+        min-width: 0 !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody div.u_ministry {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 40px !important;
+        padding-bottom: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-right: 40px !important;
+        min-width: 0 !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody div.u_1800048215 .copyright {
+        font-size: 12px !important;
+      }
+      *#dm *.dmBody div.u_1800048215 {
+        display: block !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 47px) !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: 405px !important;
+        margin-top: 10px !important;
+        margin-bottom: 0 !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody div.u_1796197152 {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+      }
+      *#dm *.dmBody div.u_1814249708 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        max-width: calc(100% - 0px) !important;
+        margin-top: 8px !important;
+        margin-bottom: 8px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+      }
+      *#dm *.dmBody div.u_1131791083 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+      }
+      *#dm *.dmBody div.u_pa_5599443 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 40px !important;
+        padding-bottom: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-right: 40px !important;
+        min-width: 0 !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody div.u_Events {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 40px !important;
+        padding-bottom: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-right: 40px !important;
+        min-width: 0 !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody div.u_1003207172 {
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: calc(100% - 0px) !important;
+        left: 0 !important;
+        width: 55px !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+        height: auto !important;
+        display: block !important;
+      }
+      *#dm *.dmBody div.u_1734711011 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 40px !important;
+        padding-bottom: 0 !important;
+        max-width: 100% !important;
+        padding-right: 40px !important;
+        min-width: 0 !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody div.u_pa_4905064 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 40px !important;
+        padding-bottom: 0 !important;
+        max-width: 100% !important;
+        padding-right: 40px !important;
+        min-width: 0 !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody div.u_History {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 40px !important;
+        padding-bottom: 0 !important;
+        max-width: 100% !important;
+        padding-right: 40px !important;
+        min-width: 0 !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody div.u_1987286848 {
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: none !important;
+        left: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+        text-align: center !important;
+        height: auto !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+      }
+      *#dm *.dmBody div.u_1311801473 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
+      *#dm *.dmBody div.u_1477799428 {
+        background-position: 50% 0 !important;
+        background-repeat: no-repeat !important;
+        background-size: contain !important;
+        padding-top: 0 !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
+      *#dm *.dmBody div.u_1084853123 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 10px !important;
+        padding-left: 10px !important;
+        padding-bottom: 10px !important;
+        max-width: 100% !important;
+        padding-right: 10px !important;
+        min-width: 25px !important;
+      }
+      body.dmTabletBody *.d-header-wrapper {
+        display: none !important;
+      }
+      body.dmTabletBody *.popupNavBox {
+        display: none !important;
+      }
+      body.dmDesktopBody *.d-header-wrapper {
+        display: none !important;
+      }
+      body.dmDesktopBody *.popupNavBox {
+        display: none !important;
+      }
+      *#dm *.dmBody div.u_1631489378 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 40px !important;
+        padding-bottom: 0 !important;
+        max-width: 100% !important;
+        padding-right: 40px !important;
+        min-width: 0 !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody div.u_1294197083 {
+        width: calc(100% - 425px) !important;
+        height: 30px !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        position: relative !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: 30px !important;
+        margin-top: 16px !important;
+        margin-bottom: 10px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody div.u_1391483155 {
+        width: 119px !important;
+        height: 119px !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        position: relative !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        max-width: 119px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+        display: block !important;
+      }
+      *#dm *.dmBody div.u_1984092704 {
+        padding-top: 4.5px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-bottom: 4.5px !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        min-width: 0 !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody div.u_1577466729 {
+        display: block !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        height: 572px !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        max-width: 100% !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+        text-align: center !important;
+        max-height: 100% !important;
+        margin-right: auto !important;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 10px !important;
+      }
+      *#dm *.dmBody div.u_1687632938 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 10px !important;
+        padding-left: 10px !important;
+        padding-bottom: 10px !important;
+        max-width: 100% !important;
+        padding-right: 10px !important;
+        min-width: 25px !important;
+      }
+      *#dm *.dmBody div.u_1645571357 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 40px !important;
+        position: relative !important;
+        height: 40px !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        margin-right: 0 !important;
+        margin-left: auto !important;
+        max-width: 100% !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+        text-align: center !important;
+        display: block !important;
+      }
+      *#dm *.dmBody div.u_1799339833 {
+        margin-left: 0 !important;
+        padding-top: 15px !important;
+        padding-left: 40px !important;
+        padding-bottom: 15px !important;
+        margin-top: 0 !important;
+        margin-bottom: 15px !important;
+        margin-right: 0 !important;
+        padding-right: 40px !important;
+        width: auto !important;
+      }
+      *#dm *.dmBody div.u_1272155019 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: 100% !important;
+        margin-top: 8px !important;
+        margin-bottom: 0 !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+        height: auto !important;
+      }
+      *#dm *.dmBody div.u_1419582666 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 2px !important;
+        padding-left: 10px !important;
+        padding-bottom: 2px !important;
+        max-width: 100% !important;
+        padding-right: 10px !important;
+        min-width: 25px !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        margin-top: 8px !important;
+        margin-bottom: 8px !important;
+      }
+      *#dm *.dmBody div.u_1495557920 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        margin-top: 6px !important;
+        margin-bottom: 8px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+      }
+      *#dm *.dmBody div.u_1316390959 {
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        height: auto !important;
+        display: block !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+      *#dm *.dmBody div.u_1109885163 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: 100% !important;
+        margin-top: 8px !important;
+        margin-bottom: 0 !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody div.u_1851271857 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+        height: auto !important;
+      }
+      *#dm *.dmBody div.u_1914928341 {
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+      }
+      *#dm *.dmBody div.u_1138271394 {
+        display: block !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 64px !important;
+        position: relative !important;
+        height: 64px !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        margin-right: auto !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody div.u_1418501874 {
+        width: 64px !important;
+        height: 64px !important;
+        display: block !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        position: relative !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        margin-right: auto !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody div.u_1005930102 {
+        width: calc(100% - 0px) !important;
+        height: 64px !important;
+        display: block !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        position: relative !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        margin-right: 216.117px !important;
+        margin-left: 0 !important;
+        max-width: 64px !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody div.u_1061694670 {
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: 262.3px !important;
+        left: 0 !important;
+        width: calc(100% - 8px) !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        height: auto !important;
+        display: block !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        margin-top: -10px !important;
+        margin-bottom: 8px !important;
+      }
+      *#dm *.dmBody div.u_1712597127 {
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: 262px !important;
+        left: 0 !important;
+        width: calc(100% - 9px) !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        height: auto !important;
+        display: block !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        margin-top: -10px !important;
+        margin-bottom: 8px !important;
+      }
+      *#dm *.dmBody div.u_1337409100 {
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: 262.3px !important;
+        left: 0 !important;
+        width: calc(100% - 8px) !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        height: auto !important;
+        display: block !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        margin-top: -10px !important;
+        margin-bottom: 8px !important;
+      }
+      *#dm *.dmBody div.u_1469103143 {
+        width: 64px !important;
+        height: 64px !important;
+      }
+      *#dm *.dmBody div.u_1250733405 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: 100% !important;
+        margin-top: -10px !important;
+        margin-bottom: 8px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+      }
+      *#dm *.dmBody div.u_1376858904 {
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        float: none !important;
+        top: 0 !important;
+        max-width: calc(100% - 0px) !important;
+        left: 0 !important;
+        width: 55px !important;
+        position: relative !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+        height: auto !important;
+        display: block !important;
+      }
+      *#dm *.dmBody div.u_1960109832 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 40px !important;
+        padding-bottom: 0 !important;
+        max-width: 100% !important;
+        padding-right: 40px !important;
+        min-width: 0 !important;
+        text-align: start !important;
+      }
+      *#dm *.dmBody div.u_1879245084 {
+        width: calc(100% - 425px) !important;
+        height: 30px !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        position: relative !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        max-width: 30px !important;
+        margin-top: 16px !important;
+        margin-bottom: 10px !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+        text-align: center !important;
+      }
+      *#dm *.dmBody div.u_1031115837 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 10px !important;
+        padding-left: 10px !important;
+        padding-bottom: 10px !important;
+        max-width: 100% !important;
+        padding-right: 10px !important;
+        min-width: 25px !important;
+      }
+      *#dm *.dmBody *.u_1922889026 .photoGalleryThumbs {
+        padding: 2.5px !important;
+      }
+      *#dm *.dmBody *.u_1922889026 .layout-container {
+        padding: 2.5px !important;
+      }
+      *#dm *.dmBody *.u_1922889026 .photoGalleryViewAll {
+        padding: 0 5px !important;
+      }
+      *#dm *.dmBody div.u_1229870124 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        max-width: 100% !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+      }
+      *#dm *.dmBody div.u_1229870124 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        height: auto !important;
+        padding-top: 2px !important;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        max-width: 100% !important;
+        padding-right: 0 !important;
+        min-width: 25px !important;
+      }
+    </style>
 
     <!-- Flex Sections CSS -->
+    <!-- Flex Sections CSS -->
 
+    <style id="globalFontSizeStyle" type="text/css">
+      .font-size-26,
+      .size-26,
+      .size-26 > font {
+        font-size: 26px !important;
+      }
+      .font-size-24,
+      .size-24,
+      .size-24 > font {
+        font-size: 24px !important;
+      }
+      .font-size-22,
+      .size-22,
+      .size-22 > font {
+        font-size: 22px !important;
+      }
+      .font-size-18,
+      .size-18,
+      .size-18 > font {
+        font-size: 18px !important;
+      }
+      .font-size-30,
+      .size-30,
+      .size-30 > font {
+        font-size: 30px !important;
+      }
+      .font-size-16,
+      .size-16,
+      .size-16 > font {
+        font-size: 16px !important;
+      }
+      .font-size-12,
+      .size-12,
+      .size-12 > font {
+        font-size: 12px !important;
+      }
+    </style>
+    <style id="pageFontSizeStyle" type="text/css"></style>
     <style id="globalFontSizeStyle" type="text/css">
       .font-size-26,
       .size-26,
@@ -2128,13 +4156,23 @@
       .dmDesktopBody:not(.editGrid)
         [data-anim-desktop]:not([data-anim-desktop="none"]),
       .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    <style id="hideAnimFix">
+      .dmDesktopBody:not(.editGrid)
+        [data-anim-desktop]:not([data-anim-desktop="none"]),
+      .dmDesktopBody:not(.editGrid) [data-anim-extended] {
         visibility: hidden;
+      }
       }
 
       .dmDesktopBody:not(.editGrid)
         .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop="none"]),
       .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+      .dmDesktopBody:not(.editGrid)
+        .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop="none"]),
+      .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
         visibility: hidden !important;
+      }
+    </style>
       }
     </style>
 
@@ -2217,11 +4255,101 @@
         line-gap-override: 0%;
       }
     </style>
+    <style id="fontFallbacks">
+      @font-face {
+        font-family: "Roboto Slab Fallback";
+        src: local("Arial");
+        ascent-override: 97.7562%;
+        descent-override: 25.2818%;
+        size-adjust: 107.1903%;
+        line-gap-override: 0%;
+      }
+      @font-face {
+        font-family: "Cardo Fallback";
+        src: local("Arial");
+        ascent-override: 103.8482%;
+        descent-override: 38.1494%;
+        size-adjust: 95.354%;
+        line-gap-override: 0%;
+      }
+      @font-face {
+        font-family: "Bitter Fallback";
+        src: local("Arial");
+        ascent-override: 89.526%;
+        descent-override: 25.3737%;
+        size-adjust: 104.4389%;
+        line-gap-override: 0%;
+      }
+      @font-face {
+        font-family: "Arial Fallback";
+        src: local("Arial");
+        line-gap-override: 0%;
+      }
+      @font-face {
+        font-family: "Alegreya Fallback";
+        src: local("Arial");
+        ascent-override: 111.0071%;
+        descent-override: 37.6943%;
+        size-adjust: 91.5257%;
+        line-gap-override: 0%;
+      }
+      @font-face {
+        font-family: "Roboto Fallback";
+        src: local("Arial");
+        ascent-override: 92.6709%;
+        descent-override: 24.3871%;
+        size-adjust: 100.1106%;
+        line-gap-override: 0%;
+      }
+      @font-face {
+        font-family: "Lato Fallback";
+        src: local("Arial");
+        ascent-override: 101.3181%;
+        descent-override: 21.865%;
+        size-adjust: 97.4159%;
+        line-gap-override: 0%;
+      }
+      @font-face {
+        font-family: "Noto Serif Fallback";
+        src: local("Arial");
+        ascent-override: 98.7162%;
+        descent-override: 27.0569%;
+        size-adjust: 108.2903%;
+        line-gap-override: 0%;
+      }
+      @font-face {
+        font-family: "Sanchez Fallback";
+        src: local("Arial");
+        ascent-override: 90.4432%;
+        descent-override: 24.6827%;
+        size-adjust: 111.0088%;
+        line-gap-override: 0%;
+      }
+      @font-face {
+        font-family: "Alike Fallback";
+        src: local("Arial");
+        ascent-override: 96.9517%;
+        descent-override: 26.6026%;
+        size-adjust: 101.4938%;
+        line-gap-override: 0%;
+      }
+    </style>
 
+    <!-- End render the required css and JS in the head section -->
     <!-- End render the required css and JS in the head section -->
 
     <meta property="og:type" content="website" />
+    <meta property="og:type" content="website" />
 
+    <title>St. Paul’s Presbyterian Church, Burlington</title>
+    <meta
+      name="keywords"
+      content="St. Paul’s, Presbyterian, Church, Burlington, Ontario"
+    />
+    <meta
+      name="description"
+      content="A very warm welcome to St. Paul’s! We love to say that again and again on Sunday Mornings at our Church. And we won&#39;t let you go until we learn your first name and sincerely shake your hand."
+    />
     <title>St. Paul’s Presbyterian Church, Burlington</title>
     <meta
       name="keywords"
@@ -2240,7 +4368,32 @@
       http-equiv="Referrer-Policy"
       content="strict-origin-when-cross-origin"
     />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
 
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="St. Paul’s Presbyterian Church, Burlington"
+    />
+    <meta
+      name="twitter:description"
+      content="A very warm welcome to St. Paul’s! We love to say that again and again on Sunday Mornings at our Church. And we won&#39;t let you go until we learn your first name and sincerely shake your hand."
+    />
+    <meta
+      property="og:description"
+      content="A very warm welcome to St. Paul’s! We love to say that again and again on Sunday Mornings at our Church. And we won&#39;t let you go until we learn your first name and sincerely shake your hand."
+    />
+    <meta
+      property="og:title"
+      content="St. Paul’s Presbyterian Church, Burlington"
+    />
     <meta name="twitter:card" content="summary" />
     <meta
       name="twitter:title"
@@ -2363,6 +4516,29 @@
                                       <span
                                         class="nav-item-text"
                                         data-link-text="
+        "
+                                        data-auto="page-text-style"
+                                        >News and Events<span
+                                          class="icon icon-angle-down"
+                                        ></span>
+                                      </span>
+                                    </a>
+                                  </li>
+                                  <li
+                                    role="menuitem"
+                                    class="unifiednav__item-wrap"
+                                    data-auto="more-pages"
+                                    data-depth="0"
+                                  >
+                                    <a
+                                      href="https://fc.churchwebcanada.ca/emily-presbyterian-cemetery#NewsandEvents"
+                                      class="unifiednav__item dmUDNavigationItem_010101905967"
+                                      target=""
+                                      data-target-page-alias=""
+                                    >
+                                      <span
+                                        class="nav-item-text"
+                                        data-link-text="
          News and Events
         "
                                         data-auto="page-text-style"
@@ -2387,7 +4563,53 @@
                                       <span
                                         class="nav-item-text"
                                         data-link-text="
+        "
+                                        data-auto="page-text-style"
+                                        >News and Events<span
+                                          class="icon icon-angle-down"
+                                        ></span>
+                                      </span>
+                                    </a>
+                                  </li>
+                                  <li
+                                    role="menuitem"
+                                    class="unifiednav__item-wrap"
+                                    data-auto="more-pages"
+                                    data-depth="0"
+                                  >
+                                    <a
+                                      href="https://fc.churchwebcanada.ca/emily-presbyterian-cemetery#NewsandEvents"
+                                      class="unifiednav__item dmUDNavigationItem_010101920275"
+                                      target=""
+                                      data-target-page-alias=""
+                                    >
+                                      <span
+                                        class="nav-item-text"
+                                        data-link-text="
          NewsandEvents
+        "
+                                        data-auto="page-text-style"
+                                        >NewsandEvents<span
+                                          class="icon icon-angle-down"
+                                        ></span>
+                                      </span>
+                                    </a>
+                                  </li>
+                                  <li
+                                    role="menuitem"
+                                    class="unifiednav__item-wrap"
+                                    data-auto="more-pages"
+                                    data-depth="0"
+                                  >
+                                    <a
+                                      href="https://fc.churchwebcanada.ca/church-template"
+                                      class="unifiednav__item dmUDNavigationItem_010101599558"
+                                      target=""
+                                      data-target-page-alias=""
+                                    >
+                                      <span
+                                        class="nav-item-text"
+                                        data-link-text="
         "
                                         data-auto="page-text-style"
                                         >NewsandEvents<span
@@ -4072,7 +6294,1274 @@
                                               ></path>
                                               <path
                                                 d="M65.1,57l-7.8,7.8L38.8,46.3l7.8-7.8l-15-15L23,32.1c-4.7,4.7-4.7,12.5,0,17.2l31.3,31.3c2.3,2.3,5.4,3.6,8.6,3.6
+		c-6.2,0-11.9-2.4-16.3-6.7c-0.4-0.4-1-0.4-1.4,0c-0.4,0.4-0.4,1,0,1.4C26,57.4,32.3,60,39,60c13.8,0,25-11.2,25-25S52.8,10,39,10z"
+                                              ></path>
+                                              <path
+                                                d="M30.7,44.7l9-9c0.2-0.2,0.3-0.4,0.3-0.7V17c0-0.6-0.4-1-1-1c-0.6,0-1,0.4-1,1v17.6l-8.7,8.7c-0.4,0.4-0.4,1,0,1.4
+		c0.2,0.2,0.5,0.3,0.7,0.3C30.3,45,30.5,44.9,30.7,44.7z"
+                                              ></path>
+                                            </g>
+                                          </svg>
+                                        </div>
+                                        <div
+                                          class="u_1250733405 dmNewParagraph"
+                                          id="1250733405"
+                                          style="
+                                            transition: none 0s ease 0s;
+                                            text-align: left;
+                                            display: block;
+                                          "
+                                          data-version="5"
+                                        >
+                                          <h3
+                                            style="line-height: 1.3"
+                                            class="text-align-center size-22"
+                                          >
+                                            <span
+                                              style="
+                                                font-weight: bold;
+                                                color: rgb(51, 51, 51);
+                                                display: initial;
+                                              "
+                                              class="font-size-22"
+                                              >Worship Service</span
+                                            >
+                                          </h3>
+                                          <p
+                                            style="line-height: 1.3"
+                                            class="text-align-center"
+                                          >
+                                            <span
+                                              style="
+                                                font-weight: bold;
+                                                display: initial;
+                                              "
+                                              >Sundays—10:30 am</span
+                                            >
+                                          </p>
+                                          <p
+                                            style="line-height: 1.3"
+                                            class="text-align-center"
+                                          >
+                                            <span style="display: initial"
+                                              >Kid's Sunday School during
+                                              Service.</span
+                                            >
+                                          </p>
+                                        </div>
+                                        <div
+                                          class="u_1687632938 dmNewParagraph"
+                                          id="1687632938"
+                                          style="
+                                            transition: none 0s ease 0s;
+                                            display: block;
+                                          "
+                                          data-version="5"
+                                        >
+                                          <p
+                                            style="line-height: 1.3"
+                                            class="text-align-left"
+                                          >
+                                            <span
+                                              style="
+                                                display: initial;
+                                                font-weight: bold;
+                                              "
+                                              >eTransfer is now available for
+                                              your contributions to the Life and
+                                              Work of St. Paul's Burlington as
+                                              ambassadors for Jesus.</span
+                                            ><span
+                                              class=""
+                                              style="display: initial"
+                                              ><span style="display: initial"
+                                                ><br /><br />Email address
+                                                is</span
+                                              > </span
+                                            ><a
+                                              href="mailto:treastpaulsburl@gmail.com"
+                                              target="_blank"
+                                              style="display: initial"
+                                              >treastpaulsburl@gmail.com</a
+                                            ><span
+                                              class=""
+                                              style="display: initial"
+                                            >
+                                              <span style="display: initial"
+                                                >totransfer from your online
+                                                banking to the church
+                                                account.</span
+                                              ></span
+                                            >
+                                          </p>
+                                          <p
+                                            style="line-height: 1.3"
+                                            class="text-align-left"
+                                          >
+                                            <span style="display: initial"
+                                              ><br
+                                            /></span>
+                                          </p>
+                                          <p
+                                            style="line-height: 1.3"
+                                            class="text-align-left"
+                                          >
+                                            <span
+                                              style="
+                                                display: initial;
+                                                font-weight: bold;
+                                              "
+                                              >Thank you.</span
+                                            >
+                                          </p>
+                                          <p
+                                            style="line-height: 1.3"
+                                            class="text-align-left"
+                                          >
+                                            <span
+                                              style="
+                                                display: initial;
+                                                font-weight: bold;
+                                                font-style: italic;
+                                              "
+                                              >Be blessed and be a
+                                              blessing.</span
+                                            >
+                                          </p>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="u_1311801473 dmRespCol small-12 large-9 medium-9"
+                                        id="1311801473"
+                                      >
+                                        <div
+                                          class="u_1419582666 dmNewParagraph"
+                                          id="1419582666"
+                                          style="
+                                            transition: none 0s ease 0s;
+                                            display: block;
+                                          "
+                                          data-version="5"
+                                        >
+                                          <p
+                                            class="text-align-left size-18 m-size-14"
+                                            style="line-height: 1.3"
+                                          >
+                                            <span
+                                              style="
+                                                font-weight: bold;
+                                                display: initial;
+                                              "
+                                              class="font-size-18 m-font-size-14"
+                                              >Welcome to St. Paul's
+                                              Presbyterian Church in Burlington,
+                                              ON</span
+                                            >
+                                          </p>
+                                          <p
+                                            class="text-align-left"
+                                            style="line-height: 1.3"
+                                          >
+                                            <span style="display: initial"
+                                              ><br
+                                            /></span>
+                                          </p>
+                                          <p
+                                            class="text-align-justify"
+                                            style="line-height: 1.3"
+                                          >
+                                            <span style="display: initial"
+                                              >It may not be obvious, but you
+                                              may be interested to know that our
+                                              congregation dates back to 1822. A
+                                              brief look at our history is
+                                              provided below, or if you'd like
+                                              to dig further have a look at the
+                                              Heritage Burlington web site:<br /></span
+                                            ><a
+                                              href="https://heritageburlington.ca/heritage_property/st-pauls-presbyterian-church-and-cemetery"
+                                              target="_blank"
+                                              runtime_url="https://heritageburlington.ca/heritage_property/st-pauls-presbyterian-church-and-cemetery"
+                                              style="display: initial"
+                                              >https://heritageburlington.ca/heritage_property/st-pauls-presbyterian-church-and-cemet</a
+                                            ><a
+                                              href="https://heritageburlington.ca/heritage_property/st-pauls-presbyterian-church-and-cemetery"
+                                              target="_blank"
+                                              runtime_url="https://heritageburlington.ca/heritage_property/st-pauls-presbyterian-church-and-cemetery"
+                                              style="
+                                                display: initial;
+                                                color: rgb(51, 51, 255);
+                                                text-decoration: underline;
+                                              "
+                                              >er</a
+                                            ><span
+                                              style="
+                                                display: initial;
+                                                color: rgb(51, 51, 255);
+                                                text-decoration: underline;
+                                              "
+                                              >y</span
+                                            ><span style="display: initial"
+                                              ><br /></span
+                                            ><span
+                                              style="
+                                                font-weight: bold;
+                                                display: initial;
+                                              "
+                                              ><br
+                                            /></span>
+                                          </p>
+                                          <p>
+                                            <span
+                                              style="
+                                                font-weight: bold;
+                                                display: initial;
+                                              "
+                                              >Better yet, drop by and get to
+                                              know us</span
+                                            ><span style="display: initial"
+                                              >:<br /><br />-Join us for worship
+                                              at 10:30 am on Sundays;<br />-Learn
+                                              at one of our Bible Studies at
+                                              different times of the year;<br />-
+                                              Enjoy the fellowship of the Jean
+                                              Gordon Auxiliary for women the
+                                              second<br />&nbsp; Monday of each
+                                              month at 1:00 pm<br />- Join us
+                                              for the Men’s Drop In each
+                                              Wednesday morning at 9:30;<br />-
+                                              Celebrate the seasons of the
+                                              church year at one of our
+                                              special<br />&nbsp; services.<br /><br />We
+                                              span the ages with a Sunday school
+                                              for the children during worship
+                                              and<br />caring for all our
+                                              seniors – and for everyone else in
+                                              between.<br /><br />If you are
+                                              looking for a church family where
+                                              you will be engaged by the<br />worship,
+                                              find support and enthusiasm to
+                                              live according to Jesus'
+                                              teachings,<br />and to be loved
+                                              for who you uniquely are, then
+                                              this is the Church for you!</span
+                                            >
+                                          </p>
+                                          <p>
+                                            <span style="display: initial"
+                                              ><br />There is so much more to
+                                              say, but let us share that with
+                                              you in person.</span
+                                            >
+                                          </p>
+                                          <p>
+                                            <span style="display: initial"
+                                              ><br /></span
+                                            ><span
+                                              style="
+                                                display: initial;
+                                                font-weight: bold;
+                                              "
+                                              >It’s our prayer that we will see
+                                              you here soon!</span
+                                            ><span style="display: initial"
+                                              ><br
+                                            /></span>
+                                          </p>
+                                        </div>
+                                        <div
+                                          class="u_1084853123 dmNewParagraph"
+                                          id="1084853123"
+                                          style="
+                                            transition: none 0s ease 0s;
+                                            display: block;
+                                          "
+                                          data-version="5"
+                                        >
+                                          <p
+                                            style="line-height: 1.3"
+                                            class="text-align-left"
+                                          >
+                                            <span
+                                              class=""
+                                              style="display: initial"
+                                              ><span style="display: initial"
+                                                >If you have any prayer requests
+                                                please send an email to</span
+                                              > </span
+                                            ><a
+                                              href="mailto:stpaulsburlington@gmail.com"
+                                              target="_blank"
+                                              style="display: initial"
+                                              >stpaulsburlington@gmail.com</a
+                                            ><span
+                                              class=""
+                                              style="display: initial"
+                                            >
+                                              <span style="display: initial"
+                                                >and we will add your request to
+                                                our PrayerMail that is sent out
+                                                to our community on Mondays and
+                                                Thursdays. There are three
+                                                categories with many
+                                                sub-categories.</span
+                                              ></span
+                                            >
+                                          </p>
+                                          <ol class="defaultList">
+                                            <li
+                                              style="line-height: 1.3"
+                                              class="text-align-left"
+                                            >
+                                              <span style="display: initial"
+                                                >What we are thankful for,</span
+                                              >
+                                            </li>
+                                            <li
+                                              style="line-height: 1.3"
+                                              class="text-align-left"
+                                            >
+                                              <span style="display: initial"
+                                                >Who to Lift up,</span
+                                              >
+                                            </li>
+                                            <li
+                                              style="line-height: 1.3"
+                                              class="text-align-left"
+                                            >
+                                              <span style="display: initial"
+                                                >Specific Prayers.</span
+                                              >
+                                            </li>
+                                          </ol>
+                                          <p
+                                            style="line-height: 1.3"
+                                            class="text-align-left"
+                                          >
+                                            <span style="display: initial"
+                                              >Thank you and be Blessed and a
+                                              Blessing to others.</span
+                                            >
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="u_1264751532 dmRespRow dmSectionParallaxNew skrollable skrollable-before"
+                                    style="
+                                      text-align: center;
+                                      background-position: 50% 100px;
+                                    "
+                                    id="1264751532"
+                                    mode="1"
+                                    data-center="background-position: 50% 0px;"
+                                    data-top-bottom="background-position: 50% -100px;"
+                                    data-bottom-top="background-position: 50% 100px;"
+                                  >
+                                    <div
+                                      class="dmRespColsWrapper u_1093622015"
+                                      id="1093622015"
+                                    >
+                                      <div
+                                        class="dmRespCol u_1983591342 small-12 medium-4 large-4"
+                                        id="1983591342"
+                                        data-anim-desktop="fadeInUp"
+                                        style="
+                                          opacity: 1;
+                                          transform: translate3d(0%, 0%, 0px);
+                                          visibility: visible !important;
+                                          transition-delay: unset !important;
+                                          transition-duration: unset !important;
+                                          animation-delay: unset !important;
+                                          animation-duration: unset !important;
+                                          transition-property: none !important;
+                                        "
+                                      >
+                                        <div
+                                          class="u_1391483155 graphicWidget"
+                                          data-widget-type="graphic"
+                                          id="1391483155"
+                                          data-layout="graphic-style-2"
+                                          data-element-type="graphic"
+                                        >
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 1536 1792"
+                                            id="1894624490"
+                                            class="svg u_1894624490"
+                                            data-icon-name="fa-facebook-official"
+                                          >
+                                            <path
+                                              fill="inherit"
+                                              d="M1451 128q35 0 60 25t25 60v1366q0 35-25 60t-60 25h-391v-595h199l30-232h-229v-148q0-56 23.5-84t91.5-28l122-1v-207q-63-9-178-9-136 0-217.5 80t-81.5 226v171h-200v232h200v595h-735q-35 0-60-25t-25-60v-1366q0-35 25-60t60-25h1366z"
+                                              id="1350617740"
+                                            ></path>
+                                          </svg>
+                                        </div>
+                                        <h3
+                                          class="u_1105570308 dmNewParagraph"
+                                          id="1105570308"
+                                          style="display: block"
+                                          data-element-type="paragraph"
+                                        >
+                                          <div style="text-align: center">
+                                            <span
+                                              style="
+                                                color: rgb(51, 51, 51);
+                                                font-weight: bold;
+                                              "
+                                              class="font-size-22 lh-1"
+                                              ><a
+                                                href="https://www.facebook.com/stpaulsburl/?fref=ts"
+                                                runtime_url="https://www.facebook.com/stpaulsburl/?fref=ts"
+                                                target="_blank"
+                                                >Like us on Facebook</a
+                                              ></span
+                                            >
+                                          </div>
+                                        </h3>
+                                      </div>
+                                      <div
+                                        class="dmRespCol u_1227164009 small-12 medium-4 large-4"
+                                        id="1227164009"
+                                        data-anim-desktop="fadeInUp"
+                                        style="
+                                          opacity: 1;
+                                          transform: translate3d(0%, 0%, 0px);
+                                          visibility: visible !important;
+                                          transition-delay: unset !important;
+                                          transition-duration: unset !important;
+                                          animation-delay: unset !important;
+                                          animation-duration: unset !important;
+                                          transition-property: none !important;
+                                        "
+                                      >
+                                        <div
+                                          class="u_1182546844 graphicWidget"
+                                          data-widget-type="graphic"
+                                          id="1182546844"
+                                          data-layout="graphic-style-2"
+                                          data-element-type="graphic"
+                                        >
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 1664 1792"
+                                            id="1486985806"
+                                            class="svg u_1486985806"
+                                            data-icon-name="fa-twitter"
+                                          >
+                                            <path
+                                              fill="inherit"
+                                              d="M1620 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"
+                                              id="1676722481"
+                                            ></path>
+                                          </svg>
+                                        </div>
+                                        <h3
+                                          class="dmNewParagraph u_1516546433"
+                                          id="1516546433"
+                                          data-element-type="paragraph"
+                                        >
+                                          <div style="text-align: center">
+                                            <span
+                                              style="
+                                                color: rgb(51, 51, 51);
+                                                font-weight: bold;
+                                              "
+                                              class="font-size-22 lh-1"
+                                              ><a
+                                                href="https://twitter.com/stpaulsburlPC"
+                                                runtime_url="https://twitter.com/stpaulsburlPC"
+                                                target="_blank"
+                                                >Follow us on Twitter</a
+                                              ></span
+                                            >
+                                          </div>
+                                        </h3>
+                                      </div>
+                                      <div
+                                        class="dmRespCol u_1929584857 small-12 medium-4 large-4"
+                                        id="1929584857"
+                                        data-anim-desktop="fadeInUp"
+                                        style="
+                                          opacity: 1;
+                                          transform: translate3d(0%, 0%, 0px);
+                                          visibility: visible !important;
+                                          transition-delay: unset !important;
+                                          transition-duration: unset !important;
+                                          animation-delay: unset !important;
+                                          animation-duration: unset !important;
+                                          transition-property: none !important;
+                                        "
+                                      >
+                                        <div
+                                          class="u_1398099078 graphicWidget"
+                                          data-widget-type="graphic"
+                                          id="1398099078"
+                                          data-layout="graphic-style-2"
+                                          data-element-type="graphic"
+                                        >
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 1536 1792"
+                                            id="1767646450"
+                                            class="svg u_1767646450"
+                                            data-icon-name="fa-instagram"
+                                          >
+                                            <path
+                                              fill="inherit"
+                                              d="M1024 896q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zM1162 896q0 164-115 279t-279 115-279-115-115-279 115-279 279-115 279 115 115 279zM1270 486q0 38-27 65t-65 27-65-27-27-65 27-65 65-27 65 27 27 65zM768 266q-7 0-76.5-0.5t-105.5 0-96.5 3-103 10-71.5 18.5q-50 20-88 58t-58 88q-11 29-18.5 71.5t-10 103-3 96.5 0 105.5 0.5 76.5-0.5 76.5 0 105.5 3 96.5 10 103 18.5 71.5q20 50 58 88t88 58q29 11 71.5 18.5t103 10 96.5 3 105.5 0 76.5-0.5 76.5 0.5 105.5 0 96.5-3 103-10 71.5-18.5q50-20 88-58t58-88q11-29 18.5-71.5t10-103 3-96.5 0-105.5-0.5-76.5 0.5-76.5 0-105.5-3-96.5-10-103-18.5-71.5q-20-50-58-88t-88-58q-29-11-71.5-18.5t-103-10-96.5-3-105.5 0-76.5 0.5zM1536 896q0 229-5 317-10 208-124 322t-322 124q-88 5-317 5t-317-5q-208-10-322-124t-124-322q-5-88-5-317t5-317q10-208 124-322t322-124q88-5 317-5t317 5q208 10 322 124t124 322q5 88 5 317z"
+                                              id="1952034622"
+                                            ></path>
+                                          </svg>
+                                        </div>
+                                        <h3
+                                          class="dmNewParagraph u_1228917718"
+                                          id="1228917718"
+                                          data-element-type="paragraph"
+                                          style="
+                                            transition: none;
+                                            display: block;
+                                          "
+                                        >
+                                          <div style="text-align: center">
+                                            <span
+                                              style="
+                                                color: rgb(51, 51, 51);
+                                                font-weight: bold;
+                                              "
+                                              class="font-size-22 lh-1"
+                                              ><a
+                                                href="https://www.instagram.com/stpaulsburlington/"
+                                                runtime_url="https://www.instagram.com/stpaulsburlington/"
+                                                target="_blank"
+                                                >Follow us on Instagram</a
+                                              ></span
+                                            >
+                                          </div>
+                                        </h3>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="u_1907322958 dmRespRow hide-for-small"
+                                    id="1907322958"
+                                  >
+                                    <div
+                                      class="dmRespColsWrapper"
+                                      id="1755993834"
+                                    >
+                                      <div
+                                        class="dmRespCol large-12 medium-12 small-12"
+                                        id="1156239740"
+                                      >
+                                        <div
+                                          class="u_1563596408 graphicWidget"
+                                          data-element-type="graphic"
+                                          data-widget-type="graphic"
+                                          id="1563596408"
+                                        >
+                                          <a
+                                            href="https://fc.churchwebcanada.ca/st-pauls-burlington#dm"
+                                            id="1303402714"
+                                            file="false"
+                                          >
+                                            <svg
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              viewBox="0 0 1792 1792"
+                                              id="1806832493"
+                                              class="svg u_1806832493"
+                                              data-icon-name="fa-chevron-up"
+                                            >
+                                              <path
+                                                fill="inherit"
+                                                d="M1683 1331l-166 165q-19 19-45 19t-45-19l-531-531-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"
+                                                id="1828660891"
+                                              ></path>
+                                            </svg>
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="u_Events dmRespRow"
+                                    id="Events"
+                                    data-anchor="Events"
+                                  >
+                                    <div
+                                      class="dmRespColsWrapper"
+                                      id="1360641581"
+                                    >
+                                      <div
+                                        class="dmRespCol large-12 medium-12 small-12 u_1795144335"
+                                        id="1795144335"
+                                      >
+                                        <div
+                                          class="dmNewParagraph"
+                                          data-element-type="paragraph"
+                                          id="1031338550"
+                                          style="
+                                            transition: opacity 1s ease-in-out
+                                              0s;
+                                          "
+                                        >
+                                          <font class="font-size-30 lh-1"
+                                            ><b>Events</b></font
+                                          >
+                                        </div>
+                                        <div
+                                          class="dmDividerWrapper clearfix u_1033513921"
+                                          id="1033513921"
+                                          data-element-type="dDividerId"
+                                        >
+                                          <hr
+                                            class="dmDivider u_1534145554"
+                                            style="
+                                              min-height: 2px;
+                                              border: none;
+                                              background: grey;
+                                            "
+                                            id="1534145554"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dmRespRow u_1796197152"
+                                    style="text-align: center"
+                                    id="1796197152"
+                                  >
+                                    <div
+                                      class="dmRespColsWrapper u_1233526612"
+                                      id="1233526612"
+                                    >
+                                      <div
+                                        class="u_1140753700 dmRespCol small-12 medium-12 large-12"
+                                        id="1140753700"
+                                      >
+                                        <div
+                                          class="u_1814249708 dmNewParagraph"
+                                          id="1814249708"
+                                          style="
+                                            transition: opacity 1s ease-in-out;
+                                            line-height: initial;
+                                          "
+                                          data-version="5"
+                                        >
+                                          <p
+                                            style="line-height: 1.3"
+                                            class="text-align-left size-16"
+                                          >
+                                            <span
+                                              style="display: initial"
+                                              class="font-size-16"
+                                              >Over the course of the year we
+                                              hold a number of events for the
+                                              church and the surrounding
+                                              community. Some are held annually,
+                                              others on a monthly basis. Below
+                                              are some brief details on a number
+                                              of these events.</span
+                                            >
+                                          </p>
+                                        </div>
+                                        <div
+                                          class="dmNewParagraph u_1131791083"
+                                          id="1131791083"
+                                          style="
+                                            transition: opacity 1s ease-in-out;
+                                            display: block;
+                                          "
+                                          data-version="5"
+                                        >
+                                          <p
+                                            style="line-height: 1.3"
+                                            class="text-align-left"
+                                          >
+                                            <span
+                                              style="
+                                                display: initial;
+                                                font-weight: bold;
+                                              "
+                                              >Jean Gordon Auxiliary</span
+                                            ><span style="display: initial"
+                                              ><br />The Jean Gordon Auxiliary
+                                              was established in 1890 when the
+                                              Ladies Aid and Women's Missionary
+                                              Society combined under the new
+                                              name to honour Jean Gordon, a
+                                              young missionary from the
+                                              congregation who served in Lahore,
+                                              India. They are a dedicated group
+                                              who meet on the first Tuesday of
+                                              each month and enjoy friendship
+                                              and fellowship. All are welcome to
+                                              join.<br /><br /></span
+                                            ><span
+                                              style="
+                                                display: initial;
+                                                font-weight: bold;
+                                              "
+                                              >Women's Bible Study</span
+                                            ><span style="display: initial"
+                                              ><br />The Women's Bible Study is
+                                              held twice each year on Wednesday
+                                              mornings and is open to all women
+                                              in the church and the community.
+                                              The Beth Moore Bible Studies are
+                                              some of the most popular.<br /><br /></span
+                                            ><span
+                                              style="
+                                                display: initial;
+                                                font-weight: bold;
+                                              "
+                                              >Men’s Drop In</span
+                                            ><span style="display: initial"
+                                              ><br />Each Wednesday morning, a
+                                              group of men meet to discuss the
+                                              World’s issues and sometimes come
+                                              up with suggestions to fix them.
+                                              They also have Bible Studies that
+                                              influence their discussions and
+                                              fellowship. (It’s sometimes known
+                                              as Possum Lodge.)<br /><br /></span
+                                            ><span
+                                              style="
+                                                display: initial;
+                                                font-weight: bold;
+                                              "
+                                              >Men’s Breakfast:</span
+                                            ><span style="display: initial"
+                                              ><br />This is held about once a
+                                              month from September through May
+                                              on a Saturday morning.&nbsp; A
+                                              good breakfast is served then an
+                                              invited speaker gives a 20-30
+                                              minute presentation followed by a
+                                              Q and A session.&nbsp; See the
+                                              Social media sites for specific
+                                              dates and speakers.&nbsp;
+                                              &nbsp;<br /><br /></span
+                                            ><span
+                                              style="
+                                                display: initial;
+                                                font-weight: bold;
+                                              "
+                                              >Soup and Bun Lunch</span
+                                            ><span style="display: initial"
+                                              ><br />Held twice a year in the
+                                              Spring and Fall, the Soup and Bun
+                                              Lunch occurs after the Sunday
+                                              service for all to enjoy a time of
+                                              fellowship.<br /><br /></span
+                                            ><span
+                                              style="
+                                                display: initial;
+                                                font-weight: bold;
+                                              "
+                                              >Antiques and Collectibles
+                                              Auction</span
+                                            ><span style="display: initial"
+                                              ><br />Held annually in October on
+                                              a Saturday, the Auction showcases
+                                              items that have been collected
+                                              throughout the year from estate
+                                              sales and donations. It is a very
+                                              well-attended event run by the
+                                              family of one of our elders and is
+                                              usually hosted by well-known
+                                              auctioneer Patrick Doherty.<br
+                                            /></span>
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="u_1631489378 dmRespRow hide-for-small"
+                                    id="1631489378"
+                                  >
+                                    <div
+                                      class="dmRespColsWrapper"
+                                      id="1393353728"
+                                    >
+                                      <div
+                                        class="dmRespCol large-12 medium-12 small-12"
+                                        id="1713493576"
+                                      >
+                                        <div
+                                          class="u_1294197083 graphicWidget"
+                                          data-element-type="graphic"
+                                          data-widget-type="graphic"
+                                          id="1294197083"
+                                        >
+                                          <a
+                                            href="https://fc.churchwebcanada.ca/st-pauls-burlington#dm"
+                                            id="1770913935"
+                                            file="false"
+                                          >
+                                            <svg
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              viewBox="0 0 1792 1792"
+                                              id="1611744179"
+                                              class="svg u_1611744179"
+                                              data-icon-name="fa-chevron-up"
+                                            >
+                                              <path
+                                                fill="inherit"
+                                                d="M1683 1331l-166 165q-19 19-45 19t-45-19l-531-531-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"
+                                                id="1523534539"
+                                              ></path>
+                                            </svg>
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="u_History dmRespRow"
+                                    id="History"
+                                    data-anchor="History"
+                                  >
+                                    <div
+                                      class="dmRespColsWrapper"
+                                      id="1184490247"
+                                    >
+                                      <div
+                                        class="dmRespCol large-12 medium-12 small-12 u_1076521722"
+                                        id="1076521722"
+                                      >
+                                        <div
+                                          class="dmNewParagraph"
+                                          data-element-type="paragraph"
+                                          id="1749229776"
+                                          style="
+                                            transition: opacity 1s ease-in-out
+                                              0s;
+                                          "
+                                        >
+                                          <font class="font-size-30 lh-1"
+                                            ><b>History</b></font
+                                          >
+                                        </div>
+                                        <div
+                                          class="dmDividerWrapper clearfix u_1003207172"
+                                          id="1003207172"
+                                          data-element-type="dDividerId"
+                                        >
+                                          <hr
+                                            class="dmDivider u_1441907354"
+                                            style="
+                                              min-height: 2px;
+                                              border: none;
+                                              background: grey;
+                                            "
+                                            id="1441907354"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dmRespRow u_1313080061"
+                                    style="text-align: center"
+                                    id="1313080061"
+                                  >
+                                    <div
+                                      class="dmRespColsWrapper u_1758215080"
+                                      id="1758215080"
+                                    >
+                                      <div
+                                        class="u_1261065497 dmRespCol small-12 medium-12 large-12"
+                                        id="1261065497"
+                                      >
+                                        <h3
+                                          class="dmNewParagraph u_1700971391"
+                                          id="1700971391"
+                                          data-element-type="paragraph"
+                                          style="display: block"
+                                        >
+                                          <span
+                                            style="
+                                              color: rgb(51, 51, 51);
+                                              font-weight: bold;
+                                            "
+                                            class="font-size-18 lh-1"
+                                            >Written by Mary Becker: Church
+                                            Historian</span
+                                          >
+                                        </h3>
+                                        <div
+                                          class="dmNewParagraph u_1970136733 text-align-left"
+                                          id="1970136733"
+                                          style="
+                                            display: block;
+                                            transition: none 0s ease 0s;
+                                            text-align: right;
+                                          "
+                                          data-version="5"
+                                        >
+                                          <p
+                                            style="line-height: 1.3"
+                                            class="text-align-left"
+                                          >
+                                            <span style="display: initial"
+                                              >Our story begins much before the
+                                              construction of the first church
+                                              building in 1822, with the arrival
+                                              in Upper Canada of immigrants from
+                                              Great Britain and Europe. The
+                                              people also spilled in from south
+                                              of the American border, as United
+                                              Empire Loyalists came in search of
+                                              fertile land grants in Nelson
+                                              Township on the newly built Dundas
+                                              Street. Once here, the task fell
+                                              to the newcomers to hew out their
+                                              homes from the unbroken
+                                              wilderness, slaving to cut down
+                                              trees and pull up stumps, clearing
+                                              the land for a farm to be built
+                                              and planting their crops before
+                                              the harsh winter came. All the
+                                              while they risked disease, cold,
+                                              failed crops, and loneliness.<br /><br />
+                                              Much has been written about the
+                                              privations and perseverance of
+                                              those early pioneers, but most
+                                              people will agree that God was
+                                              also in the wilderness, and the
+                                              people were truly faithful in
+                                              their devotion of Him. In those
+                                              early years, around 1816, the
+                                              settlers met in Hugh McLaren's
+                                              barn where the Reverend William
+                                              Jenkins from Scarborough, in York
+                                              County, came to preach.<br /><br />
+                                              Winters in Upper Canada were very
+                                              harsh and the barn was draughty,
+                                              so the people organized a
+                                              congregation and set about to
+                                              build the first church. The
+                                              Bastedo and Calvert families
+                                              donated lots 12 and 13, parcels of
+                                              acreage from the corners of their
+                                              200-acre land grants, for the
+                                              building of a white frame church.
+                                              This building stood a little east
+                                              of the present-day old St. Paul's,
+                                              with land for a cemetery abutting
+                                              it. No drawings or tintype photo
+                                              of the white frame church has ever
+                                              been found. As was the sad reality
+                                              and a very common occurrence
+                                              within the harsh winter
+                                              environment of pioneer life, the
+                                              Bastedo family lost a baby
+                                              daughter during those early years
+                                              and her grave is one of the first
+                                              in St. Paul's Cemetery. We can all
+                                              learn so much about our history by
+                                              walking through the peaceful
+                                              grounds of the adjoining cemetery,
+                                              which is also the resting place of
+                                              a soldier who fought in the Battle
+                                              of 1812, as well as countless
+                                              early ancestors from present-day
+                                              members of our congregation and
+                                              community. Some of those names
+                                              include: Dryden, Featherstone,
+                                              Gunby, Heslop, Hunter, Irving and
+                                              Marshall.<br /><br />
+                                              In 1867, a permanent brick church
+                                              was built, a short distance west
+                                              of the original frame building,
+                                              and remained the home of the St.
+                                              Paul’s congregation until 1993. A
+                                              fire in 1960 damaged the interior
+                                              but it was restored the following
+                                              year. In 1993, the present
+                                              building was completed east of the
+                                              1867 building and a Service of
+                                              Dedication held on October 3. Many
+                                              of the precious relics from the
+                                              old church were brought over to
+                                              their new home. The 1867 building
+                                              was sold and has become a music
+                                              therapy centre.<br
+                                            /></span>
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dmRespRow"
+                                    id="AuctionItems"
+                                    data-anchor="Auction Items"
+                                  >
+                                    <div
+                                      class="dmRespColsWrapper"
+                                      id="1883347617"
+                                    >
+                                      <div
+                                        class="dmRespCol large-12 medium-12 small-12"
+                                        id="1841412200"
+                                      >
+                                        <div
+                                          class="dmDividerWrapper clearfix u_1376858904"
+                                          id="1376858904"
+                                          data-element-type="dDividerId"
+                                        >
+                                          <hr
+                                            class="dmDivider u_1893425680"
+                                            style="
+                                              min-height: 2px;
+                                              border: none;
+                                              background: grey;
+                                            "
+                                            id="1893425680"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="u_1960109832 dmRespRow hide-for-small"
+                                    id="1960109832"
+                                  >
+                                    <div
+                                      class="dmRespColsWrapper"
+                                      id="1312089034"
+                                    >
+                                      <div
+                                        class="dmRespCol large-12 medium-12 small-12"
+                                        id="1634293941"
+                                      >
+                                        <div
+                                          class="u_1879245084 graphicWidget"
+                                          data-element-type="graphic"
+                                          data-widget-type="graphic"
+                                          id="1879245084"
+                                        >
+                                          <a
+                                            href="https://fc.churchwebcanada.ca/st-pauls-burlington#dm"
+                                            id="1847517535"
+                                            file="false"
+                                          >
+                                            <svg
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              viewBox="0 0 1792 1792"
+                                              id="1998249575"
+                                              class="svg u_1998249575"
+                                              data-icon-name="fa-chevron-up"
+                                            >
+                                              <path
+                                                fill="inherit"
+                                                d="M1683 1331l-166 165q-19 19-45 19t-45-19l-531-531-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"
+                                                id="1520901312"
+                                              ></path>
+                                            </svg>
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="u_contact dmRespRow"
+                                    id="contact"
+                                    data-anchor="contact"
+                                  >
+                                    <div
+                                      class="dmRespColsWrapper"
+                                      id="1872050411"
+                                    >
+                                      <div
+                                        class="dmRespCol large-12 medium-12 small-12 u_1403833137"
+                                        id="1403833137"
+                                      >
+                                        <div
+                                          class="dmNewParagraph"
+                                          data-element-type="paragraph"
+                                          id="1002048576"
+                                          style="
+                                            transition: opacity 1s ease-in-out
+                                              0s;
+                                          "
+                                        >
+                                          <font class="font-size-30 lh-1"
+                                            ><b>Contact</b></font
+                                          >
+                                        </div>
+                                        <div
+                                          class="dmDividerWrapper clearfix u_1499747411"
+                                          id="1499747411"
+                                          data-element-type="dDividerId"
+                                        >
+                                          <hr
+                                            class="dmDivider u_1873676660"
+                                            style="
+                                              min-height: 2px;
+                                              border: none;
+                                              background: grey;
+                                            "
+                                            id="1873676660"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="u_1409078484 dmRespRow"
+                                    style="text-align: center"
+                                    id="1409078484"
+                                  >
+                                    <div
+                                      class="dmRespColsWrapper u_1709169361"
+                                      id="1709169361"
+                                    >
+                                      <div
+                                        class="u_1478558865 dmRespCol small-12 large-4 medium-4"
+                                        id="1478558865"
+                                      >
+                                        <div
+                                          class="u_1005930102 graphicWidget"
+                                          data-element-type="graphic"
+                                          data-widget-type="graphic"
+                                          id="1005930102"
+                                          data-layout="graphic-style-1"
+                                        >
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 100 100"
+                                            id="1147419262"
+                                            class="svg u_1147419262"
+                                            data-icon-name="li_phone"
+                                          >
+                                            <g>
+                                              <path
+                                                d="M36.2,22.1v2.2c5.5,0,10,4.5,10,10h2.2C48.4,27.6,42.9,22.1,36.2,22.1z"
+                                              ></path>
+                                              <path
+                                                d="M52.4,34.3h2.2c0-4.9-1.9-9.6-5.4-13.1c-3.5-3.5-8.1-5.4-13.1-5.4V18c4.4,0,8.5,1.7,11.5,4.8C50.7,25.9,52.4,30,52.4,34.3z
+		"
+                                              ></path>
+                                              <path
+                                                d="M65.1,57l-7.8,7.8L38.8,46.3l7.8-7.8l-15-15L23,32.1c-4.7,4.7-4.7,12.5,0,17.2l31.3,31.3c2.3,2.3,5.4,3.6,8.6,3.6
 		c3.2,0,6.3-1.3,8.6-3.6l8.6-8.6L65.1,57z M70,79.1c-1.9,1.9-4.4,2.9-7,2.9c-2.7,0-5.2-1-7-2.9L24.6,47.8c-3.9-3.9-3.9-10.2,0-14.1
+		l7-7l11.9,11.9l-7.8,7.8L57.3,68l7.8-7.8L77,72L70,79.1z"
+                                              ></path>
+                                            </g>
+                                          </svg>
+                                        </div>
+                                        <div
+                                          class="u_1337409100 dmNewParagraph"
+                                          id="1337409100"
+                                          style="
+                                            display: block;
+                                            text-align: center;
+                                          "
+                                          data-element-type="paragraph"
+                                          data-version="5"
+                                        >
+                                          <h4
+                                            style="line-height: 1.3"
+                                            class="text-align-left"
+                                          >
+                                            <span
+                                              style="
+                                                background-color: transparent;
+                                                color: rgb(51, 51, 51);
+                                                display: initial;
+                                              "
+                                              >PHONE</span
+                                            >
+                                          </h4>
+                                          <p
+                                            style="line-height: 1.3"
+                                            class="text-align-left"
+                                          >
+                                            <a
+                                              href="tel:905-332-8122"
+                                              target="_blank"
+                                              style="display: initial"
+                                              >905-332-8122</a
+                                            >
+                                          </p>
+                                        </div>
+                                        <div
+                                          class="u_1418501874 graphicWidget"
+                                          data-element-type="graphic"
+                                          data-widget-type="graphic"
+                                          id="1418501874"
+                                          data-layout="graphic-style-1"
+                                        >
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 100 100"
+                                            id="1947661312"
+                                            class="svg u_1947661312"
+                                            data-icon-name="li-envelope"
+                                          >
+                                            <path
+                                              d="M17.8,28.2v43.6h64.4V28.2H17.8z M77.7,30.3L50,48.8L22.3,30.3H77.7z M19.9,69.7V31.2L50,51.2l30.1-20.1v38.5H19.9z"
+                                            ></path>
+                                          </svg>
+                                        </div>
+                                        <div
+                                          class="u_1061694670 dmNewParagraph"
+                                          id="1061694670"
+                                          style="
+                                            display: block;
+                                            text-align: center;
+                                          "
+                                          data-element-type="paragraph"
+                                          data-version="5"
+                                        >
+                                          <h4
+                                            class="text-align-left"
+                                            style="line-height: 1.3"
+                                          >
+                                            <span
+                                              style="
+                                                display: initial;
+                                                color: rgb(51, 51, 51);
+                                                background-color: transparent;
+                                              "
+                                              >EMAIL</span
+                                            >
+                                          </h4>
+                                          <p
+                                            class="text-align-left"
+                                            style="line-height: 1.3"
+                                          >
+                                            <a
+                                              href="mailto:stpaulsburlington@gmail.com"
+                                              target="_blank"
+                                              style="display: initial"
+                                              >stpaulsburlington@gmail.com</a
+                                            >
+                                          </p>
+                                        </div>
+                                        <div
+                                          class="u_1138271394 graphicWidget"
+                                          data-element-type="graphic"
+                                          data-widget-type="graphic"
+                                          id="1138271394"
+                                        >
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 100 100"
+                                            id="1121514261"
+                                            class="svg u_1121514261"
+                                            data-icon-name="li-map-marker"
+                                          >
+                                            <g>
+                                              <path
+                                                d="M69.1,25.3C64,20.2,57.2,17.4,50,17.4c-7.2,0-14,2.8-19.1,7.9c-10.5,10.5-10.5,27.6,0,38.2L50,82.6l19.1-19.1
 		l7-7l11.9,11.9l-7.8,7.8L57.3,68l7.8-7.8L77,72L70,79.1z"
                                               ></path>
                                             </g>
@@ -4662,7 +8151,24 @@
       var d_version = "production_4788";
       var build = "2024-09-26T12_48_27";
       window["v" + "ersion"] = d_version;
+      window.customWidgetsFunctions = {};
+      window.customWidgetsStrings = {};
+      window.collections = {};
+      window.currentLanguage = "ENGLISH";
+      window.isSitePreview = false;
+    </script>
+    <script>
+      window.customWidgetsFunctions["1f5975986930429f819d4cd2154b5c4a~22"] =
+        function (element, data, api) {
+          null;
+        };
+    </script>
+    <script type="text/javascript">
+      var d_version = "production_4788";
+      var build = "2024-09-26T12_48_27";
+      window["v" + "ersion"] = d_version;
 
+      function buildEditorParent() {
       function buildEditorParent() {
         window.isMultiScreen = true;
         window.editorParent = {};
@@ -4677,7 +8183,17 @@
           }
         } catch (e) {}
       }
+          var _p = window.parent;
+          if (_p && _p.document && _p.$ && _p.$.dmfw) {
+            window.editorParent = _p;
+          } else if (_p.isSitePreview) {
+            window.previewParent = _p;
+          }
+        } catch (e) {}
+      }
 
+      buildEditorParent();
+    </script>
       buildEditorParent();
     </script>
 
@@ -4690,14 +8206,33 @@
     <!-- End Load jQuery -->
     <!-- Injecting site-wide before scripts -->
     <!-- End Injecting site-wide to the head -->
+    <!-- Load jQuery -->
+    <script
+      type="text/javascript"
+      id="d-js-jquery"
+      src="./St. Paul’s Presbyterian Church, Burlington_files/jquery-3.7.0.min.js.download"
+    ></script>
+    <!-- End Load jQuery -->
+    <!-- Injecting site-wide before scripts -->
+    <!-- End Injecting site-wide to the head -->
 
+    <script>
+      var _jquery = window.$;
     <script>
       var _jquery = window.$;
 
       var jqueryAliases = ["$", "jquery", "jQuery"];
+      var jqueryAliases = ["$", "jquery", "jQuery"];
 
       jqueryAliases.forEach((alias) => {
+      jqueryAliases.forEach((alias) => {
         Object.defineProperty(window, alias, {
+          get() {
+            return _jquery;
+          },
+          set() {
+            console.warn("Trying to over-write the global jquery object!");
+          },
           get() {
             return _jquery;
           },
@@ -4711,7 +8246,17 @@
     <script>
       window.cookiesNotificationMarkupPreview = "null";
     </script>
+      });
+      window.jQuery.migrateMute = true;
+    </script>
+    <script>
+      window.cookiesNotificationMarkupPreview = "null";
+    </script>
 
+    <!-- HEAD RT JS Include -->
+    <script id="d-js-params">
+      window.INSITE = window.INSITE || {};
+      window.INSITE.device = "desktop";
     <!-- HEAD RT JS Include -->
     <script id="d-js-params">
       window.INSITE = window.INSITE || {};
@@ -4790,7 +8335,44 @@
       rtCommonProps[
         "platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"
       ] = false;
+      rtCommonProps["common.mapsProvider"] = "mapbox";
 
+      rtCommonProps["common.mapsProvider.version"] = "0.52.0";
+      rtCommonProps["common.geocodeProvider"] = "mapbox";
+      rtCommonProps["common.map.defaults.radiusSize"] = "1500";
+      rtCommonProps["common.map.defaults.radiusBg"] =
+        "rgba(255, 255, 255, 0.4)";
+      rtCommonProps["common.map.defaults.strokeColor"] =
+        "rgba(255, 255, 255, 1)";
+      rtCommonProps["common.map.defaults.strokeSize"] = "2";
+      rtCommonProps["server.for.resources"] = "";
+      rtCommonProps["feature.flag.lazy.widgets"] = true;
+      rtCommonProps["feature.flag.single.wow"] = false;
+      rtCommonProps["feature.flag.disallowPopupsInEditor"] = true;
+      rtCommonProps["feature.flag.mark.anchors"] = true;
+      rtCommonProps["captcha.public.key"] =
+        "6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz";
+      rtCommonProps["captcha.invisible.public.key"] =
+        "6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME";
+      rtCommonProps["images.sizes.small"] = 160;
+      rtCommonProps["images.sizes.mobile"] = 640;
+      rtCommonProps["images.sizes.tablet"] = 1280;
+      rtCommonProps["images.sizes.desktop"] = 1920;
+      rtCommonProps["modules.resources.cdn"] = true;
+      rtCommonProps["import.images.storage.imageCDN"] =
+        "https://lirp.cdn-website.com/";
+      rtCommonProps["facebook.api.version"] = "7.0";
+      rtCommonProps["feature.flag.runtime.inp.threshold"] = 150;
+      rtCommonProps["feature.flag.performance.logs"] = true;
+      rtCommonProps["site.widget.form.captcha.type"] = "g_recaptcha";
+      rtCommonProps["friendly.captcha.site.key"] = "FCMGSQG9GVNMFS8K";
+      rtCommonProps["cookiebot.mapbox.consent.category"] = "marketing";
+      rtCommonProps[
+        "platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"
+      ] = false;
+
+      // feature flags that's used out of runtime module (in  legacy files)
+      rtCommonProps["site.runtime.video.background.ssr"] = true;
       // feature flags that's used out of runtime module (in  legacy files)
       rtCommonProps["site.runtime.video.background.ssr"] = true;
 
@@ -4839,7 +8421,32 @@
     <script type="text/javascript" id="d_track_campaign">
       (function () {
         var campaign = /utm_campaign=([^&]*)/.exec(window.location.search);
+      });
+      $(document).resize(function () {});
+    </script>
+    <script type="text/javascript" id="d_track_campaign">
+      (function () {
+        var campaign = /utm_campaign=([^&]*)/.exec(window.location.search);
 
+        if (campaign && campaign != null && campaign.length > 1) {
+          campaign = campaign[1];
+          document.cookie =
+            "_dm_rt_campaign=" +
+            campaign +
+            ";expires=" +
+            new Date().getTime() +
+            24 * 60 * 60 * 1000 +
+            ";domain=" +
+            window.location.hostname +
+            ";path=/";
+        }
+      })();
+    </script>
+    <script type="text/javascript">
+      var _dm_gaq = {};
+      var _gaq = _gaq || [];
+      var _dm_insite = [];
+    </script>
         if (campaign && campaign != null && campaign.length > 1) {
           campaign = campaign[1];
           document.cookie =
@@ -4861,15 +8468,23 @@
     </script>
 
     <div style="display: none" id="P6iryBW0Wu"></div>
+    <div style="display: none" id="P6iryBW0Wu"></div>
 
+    <!-- photoswipe markup -->
     <!-- photoswipe markup -->
 
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
       <!-- Background of PhotoSwipe. 
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <!-- Background of PhotoSwipe. 
          It's a separate element as animating opacity is faster than rgba(). -->
       <div class="pswp__bg"></div>
+      <div class="pswp__bg"></div>
 
+      <!-- Slides wrapper with overflow:hidden. -->
+      <div class="pswp__scroll-wrap">
       <!-- Slides wrapper with overflow:hidden. -->
       <div class="pswp__scroll-wrap">
         <!-- Container that holds slides. 
@@ -4879,15 +8494,25 @@
           <div class="pswp__item"></div>
           <div class="pswp__item"></div>
           <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
         </div>
 
         <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
         <div class="pswp__ui pswp__ui--hidden">
           <div class="pswp__top-bar">
             <!--  Controls are self-explanatory. Order can be changed. -->
+          <div class="pswp__top-bar">
+            <!--  Controls are self-explanatory. Order can be changed. -->
 
             <div class="pswp__counter"></div>
+            <div class="pswp__counter"></div>
 
+            <button
+              class="pswp__button pswp__button--close"
+              title="Close (Esc)"
+            ></button>
             <button
               class="pswp__button pswp__button--close"
               title="Close (Esc)"
@@ -4897,7 +8522,15 @@
               class="pswp__button pswp__button--share"
               title="Share"
             ></button>
+            <button
+              class="pswp__button pswp__button--share"
+              title="Share"
+            ></button>
 
+            <button
+              class="pswp__button pswp__button--fs"
+              title="Toggle fullscreen"
+            ></button>
             <button
               class="pswp__button pswp__button--fs"
               title="Toggle fullscreen"
@@ -4907,7 +8540,21 @@
               class="pswp__button pswp__button--zoom"
               title="Zoom in/out"
             ></button>
+            <button
+              class="pswp__button pswp__button--zoom"
+              title="Zoom in/out"
+            ></button>
 
+            <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+            <!-- element will get class pswp__preloader--active when preloader is running -->
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
             <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
             <!-- element will get class pswp__preloader--active when preloader is running -->
             <div class="pswp__preloader">
@@ -4924,7 +8571,16 @@
           >
             <div class="pswp__share-tooltip"></div>
           </div>
+          <div
+            class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"
+          >
+            <div class="pswp__share-tooltip"></div>
+          </div>
 
+          <button
+            class="pswp__button pswp__button--arrow--left"
+            title="Previous (arrow left)"
+          ></button>
           <button
             class="pswp__button pswp__button--arrow--left"
             title="Previous (arrow left)"
@@ -4934,7 +8590,14 @@
             class="pswp__button pswp__button--arrow--right"
             title="Next (arrow right)"
           ></button>
+          <button
+            class="pswp__button pswp__button--arrow--right"
+            title="Next (arrow right)"
+          ></button>
 
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
           <div class="pswp__caption">
             <div class="pswp__caption__center"></div>
           </div>
@@ -4959,9 +8622,34 @@
 
       Parameters.NavigationAreaParams.LessButtonText = "Less";
       Parameters.HomeLinkText = "Home";
+      </div>
+    </div>
+    <div id="fb-root" data-locale="en"></div>
+    <!-- Alias: d86e27e6 -->
+    <div class="dmPopupMask" id="dmPopupMask"></div>
+    <div id="dmPopup" class="dmPopup">
+      <div class="dmPopupCloseWrapper">
+        <div
+          class="dmPopupClose dm-common-icons-close oneIcon"
+          onclick="dmHidePopup(event);"
+        ></div>
+      </div>
+      <div class="dmPopupTitle"><span></span> Share by:</div>
+      <div class="data"></div>
+    </div>
+    <script type="text/javascript">
+      Parameters.NavigationAreaParams.MoreButtonText = "More";
+
+      Parameters.NavigationAreaParams.LessButtonText = "Less";
+      Parameters.HomeLinkText = "Home";
     </script>
     <!--  End Script tags -->
+    <!--  End Script tags -->
 
+    <!--  Site Wide Html Markup -->
+    <!--  Site Wide Html Markup -->
+  </body>
+</html>
     <!--  Site Wide Html Markup -->
     <!--  Site Wide Html Markup -->
   </body>
