@@ -11300,3 +11300,28 @@ div.buttons .text,
   margin-right: 0 !important;
   padding-right: 0 !important;
 }
+
+.sp-welcome {
+  /* color: orange; */
+}
+
+.sp-bold {
+  font-weight: 600;
+}
+
+.sp-welcome-title {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.sp-welcome-table {
+  margin: 0 auto;
+}
+
+.sp-welcome-table tr td {
+  /* border: 1px solid black; */
+}
+
+.sp-welcome-table tr td:nth-child(2) {
+  padding-left: 10px;
+}
